@@ -6,7 +6,7 @@ const styles = {
         'height': '100px',
         'resize': 'none'
     },
-}
+};
 
 const placeholderText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
 

@@ -17,7 +17,7 @@ class ReviewStarRating extends React.Component {
 
     onStarClick = (nextValue, prevValue) => {
         console.log('onStarClick', nextValue, prevValue)
-    }
+    };
 
     render() {
         return (

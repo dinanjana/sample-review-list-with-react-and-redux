@@ -8,7 +8,7 @@ const styles = {
         paddingBottom:'20px',
         borderBottom:'1px solid grey'
     }
-}
+};
 
 class ReviewForm extends React.Component {
     render () {
