@@ -2,7 +2,7 @@
  * Created by dinanjanag on 8/5/19.
  */
 import { createStore, applyMiddleware } from 'redux';
-import { LOAD_REVIEWS_FULFILLED, SAVE_REVIEW_FULFILLED, SELECT_REVIEW, DELETE_REVIEW_FULFILLED, ENTER_REVIEW } from  '../Events';
+import { LOAD_REVIEWS_FULFILLED, SAVE_REVIEW_FULFILLED, SELECT_REVIEW, ENTER_REVIEW, ENTER_RATING } from  '../Events';
 import { getNextIndex, getCurrentPageNumber } from '../Logic';
 import { MAX_NUMBER_OF_REVIEWS } from '../Constants';
 import promise from 'redux-promise-middleware';
@@ -51,22 +51,30 @@ const reducer = (state = initialState, action) => {
           currentPageNumber: getCurrentPageNumber(
             action.payload.data.length, nextIndex),
         },
+        review: state.review,
         error: state.error,
       }
     }
 
     case ENTER_REVIEW: {
       return _.chain(state)
-      .set('state.review.body', action.payload.body)
-      .set('state.review.rating', action.payload.rating)
+      .clone()
+      .set('review.body', action.payload.body)
+      .value();
+    }
+
+    case ENTER_RATING: {
+      return _.chain(state)
+      .clone()
+      .set('review.rating', action.payload.rating)
       .value();
     }
 
     case SAVE_REVIEW_FULFILLED: {
       return _.chain(state)
       .clone(state)
-      .set('state.review.body', '')
-      .set('state.review.rating', 0)
+      .set('review.body', '')
+      .set('review.rating', 0)
       .value();
     }
 
@@ -75,10 +83,6 @@ const reducer = (state = initialState, action) => {
       .clone()
       .set('selectedReview', action.payload.id)
       .value();
-    }
-
-    case DELETE_REVIEW_FULFILLED: {
-      return _.chain(state).clone().set('reviewList')
     }
 
     default:

@@ -1,6 +1,6 @@
 import React from 'react';
-import ReviewForm from './Components/ReviewForm/ReviewForm';
 import ReviewsListView from './Views/ReviewsListView';
+import ReviewFormView from './Views/ReviewFormView';
 import ButtonsComp from './Views/ButtonsView';
 import { Col, Row } from 'react-bootstrap';
 
@@ -16,7 +16,7 @@ class App extends React.Component {
             <div className="container" style={styles()}>
                 <Row>
                   <Col md={4} mdOffset={4}>
-                    <ReviewForm />
+                    <ReviewFormView />
                     <ReviewsListView />
                   </Col>
                 </Row>

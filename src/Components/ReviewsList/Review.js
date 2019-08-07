@@ -18,7 +18,6 @@ const Review = ({ body, rating, id, select, deleteReview, selected }) => {
         value={rating}
         editing={false}
       />
-      {console.log(`${selected} ${id}`)}
       <Button disabled={ selected !== id } onClick={() => deleteReview(id)}>Delete</Button>
     </ListGroupItem>
   )
