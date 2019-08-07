@@ -10,6 +10,7 @@ import {
   SAVE_REVIEW,
   ENTER_REVIEW,
   ENTER_RATING,
+  CLEAN_MESSAGES,
 } from '../Events';
 
 
@@ -64,6 +65,11 @@ const deleteReviewAndReload = (dispatch, id) => {
   dispatch(loadReviews(false, true));
 };
 
+const cleanMessages = () => ({
+  type: CLEAN_MESSAGES,
+  payload: {},
+});
+
 export {
   loadReviews,
   enterReview,
@@ -72,5 +78,6 @@ export {
   selectReview,
   deleteReviewAndReload,
   saveAndReloadReviewList,
+  cleanMessages,
 }
 

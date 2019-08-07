@@ -3,7 +3,7 @@ import ReviewsListView from './Views/ReviewsListView';
 import ReviewFormView from './Views/ReviewFormView';
 import ButtonsComp from './Views/ButtonsView';
 import { Col, Row } from 'react-bootstrap';
-import MessageComponent from "./Components/Message/MessageComp";
+import MessageView from "./Views/MessageView";
 
 function styles () {
     return {
@@ -17,7 +17,7 @@ class App extends React.Component {
             <div className="container" style={styles()}>
                 <Row>
                   <Col md={4} mdOffset={4}>
-                    <MessageComponent/>
+                    <MessageView/>
                     <ReviewFormView />
                     <ReviewsListView />
                   </Col>
