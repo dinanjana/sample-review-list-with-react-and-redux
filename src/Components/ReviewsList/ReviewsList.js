@@ -9,8 +9,6 @@ const styles = {
     }
 };
 
-
-
 const ReviewsList = (props) => {
     const { reviewList, select, deleteReview, selected } = props;
   return (
