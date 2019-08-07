@@ -5,11 +5,11 @@ import Button from '@material-ui/core/Button';
 import { Col, Row } from 'react-bootstrap';
 import React from 'react'
 
-const ButtonComp = ({ page, total, move }) => {
+const ButtonComp = ({ page, total, move, backButtonDisabled }) => {
   return (
     <Row>
       <Col>
-        <Button onClick={() => move(false)}>Previous</Button>
+        <Button disabled={backButtonDisabled} onClick={() => move(false)}>Previous</Button>
         {page}/{total}
         <Button onClick={() => move(true)}>Next</Button>
       </Col>

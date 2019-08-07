@@ -9,7 +9,9 @@ import React from 'react'
 
 const mapStateToProps = state => ({
   page: state.pagination.currentPageNumber,
-  total: Math.ceil(state.pagination.total/MAX_NUMBER_OF_REVIEWS) });
+  total: Math.ceil(state.pagination.total/MAX_NUMBER_OF_REVIEWS),
+  backButtonDisabled: state.pagination.currentPageNumber === 1,
+});
 
 const mapDispatchToProps = dispatch => ({
   move: (next) => dispatch(loadReviews(next)),

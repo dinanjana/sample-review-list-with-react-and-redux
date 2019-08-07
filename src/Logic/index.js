@@ -22,7 +22,7 @@ const getCurrentPageNumber = (length, currIndex) => {
   if (currIndex === 0) {
     return 1;
   } else {
-    return Math.ceil(length/currIndex);
+    return Math.ceil((currIndex + 1 )/MAX_NUMBER_OF_REVIEWS);
   }
 };
 
