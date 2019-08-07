@@ -1,5 +1,5 @@
 
-import {MAX_NUMBER_OF_REVIEWS} from '../Constants';
+import { MAX_NUMBER_OF_REVIEWS } from '../Constants';
 
 const getNextIndex = (length, currIndex, initiate = false, next = true) => {
   let index;
@@ -22,9 +22,11 @@ const getCurrentPageNumber = (length, currIndex) => {
   if (currIndex === 0) {
     return 1;
   } else {
-    return length/currIndex;
+    return Math.ceil(length/currIndex);
   }
 };
+
+
 
 export {
   getNextIndex,

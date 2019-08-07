@@ -12,7 +12,7 @@ const styles = {
 
 
 const ReviewsList = (props) => {
-    const {reviewList} = props;
+    const { reviewList, select, deleteReview, selected } = props;
   return (
     <div style={styles.wrapper}>
         <ListGroup>
@@ -22,6 +22,10 @@ const ReviewsList = (props) => {
                 <Review
                     body={review.body}
                     rating={review.rating}
+                    id={review.id}
+                    select={select}
+                    deleteReview={deleteReview}
+                    selected={selected}
                 />))
             }
         </ListGroup>

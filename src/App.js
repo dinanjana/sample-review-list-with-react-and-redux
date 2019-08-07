@@ -1,6 +1,7 @@
 import React from 'react';
 import ReviewForm from './Components/ReviewForm/ReviewForm';
-import ReviewsListView from './Views/ReviewsListgiView';
+import ReviewsListView from './Views/ReviewsListView';
+import ButtonsComp from './Views/ButtonsView';
 import { Col, Row } from 'react-bootstrap';
 
 function styles () {
@@ -19,6 +20,7 @@ class App extends React.Component {
                     <ReviewsListView />
                   </Col>
                 </Row>
+                <ButtonsComp/>
             </div>
         )
     }
