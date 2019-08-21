@@ -1,7 +1,9 @@
-import React from 'react'
-import ReviewForm from './Components/ReviewForm/ReviewForm'
-import ReviewsList from './Components/ReviewsList/ReviewsList'
-import { Col, Row } from 'react-bootstrap'
+import React from 'react';
+import ReviewsListView from './Views/ReviewsListView';
+import ReviewFormView from './Views/ReviewFormView';
+import ButtonsComp from './Views/ButtonsView';
+import { Col, Row } from 'react-bootstrap';
+import MessageView from "./Views/MessageView";
 
 function styles () {
     return {
@@ -15,10 +17,12 @@ class App extends React.Component {
             <div className="container" style={styles()}>
                 <Row>
                   <Col md={4} mdOffset={4}>
-                    <ReviewForm />
-                    <ReviewsList />
+                    <MessageView/>
+                    <ReviewFormView />
+                    <ReviewsListView />
                   </Col>
                 </Row>
+                <ButtonsComp/>
             </div>
         )
     }

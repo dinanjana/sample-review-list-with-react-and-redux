@@ -1,29 +1,34 @@
 import React from 'react'
 import { ListGroup } from 'react-bootstrap';
+import { connect } from "react-redux";
 import Review from './Review';
 
 const styles = {
     wrapper: {
         marginTop: '20px'
     }
-}
+};
 
+const ReviewsList = (props) => {
+    const { reviewList, select, deleteReview, selected } = props;
+  return (
+    <div style={styles.wrapper}>
+        <ListGroup>
+            {/*<h5>Display the list of reviews here...</h5>*/}
+            { reviewList.map(
+              (review) => (
+                <Review
+                    body={review.body}
+                    rating={review.rating}
+                    id={review.id}
+                    select={select}
+                    deleteReview={deleteReview}
+                    selected={selected}
+                />))
+            }
+        </ListGroup>
+    </div>
+  );
+};
 
-
-class ReviewsList extends React.Component {
-
-    render() {
-        return (
-            <div style={styles.wrapper}>
-                <ListGroup>
-                    <h5>Display the list of reviews here...</h5>
-                    <p>Example:</p>
-                    <Review />
-                </ListGroup>
-            </div>
-        )
-    }
-
-}
-
-export default ReviewsList
+export default ReviewsList;

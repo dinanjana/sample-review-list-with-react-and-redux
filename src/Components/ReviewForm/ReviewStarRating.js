@@ -6,32 +6,32 @@ const styles = {
     label: {
         display: 'block'
     }
-}
+};
 
 /*
     react-star-rating-component
     https://github.com/voronianski/react-star-rating-component
 */
 
-class ReviewStarRating extends React.Component {
+const ReviewStarRating = ({ rating, enterRating }) => {
 
-    onStarClick = (nextValue, prevValue) => {
+    const onStarClick = (nextValue, prevValue) => {
+        enterRating(nextValue);
         console.log('onStarClick', nextValue, prevValue)
-    }
+    };
 
-    render() {
-        return (
-            <Form.Group>
-                <Form.Label style={styles.label}>
-                    Rating
-                </Form.Label>
-                <StarRatingComponent
-                    name="star-rating"
-                    onStarClick={this.onStarClick}
-                />
-            </Form.Group>
-        )
-    }
-}
+    return (
+      <Form.Group>
+        <Form.Label style={styles.label}>
+          Rating
+        </Form.Label>
+        <StarRatingComponent
+          name="star-rating"
+          value={rating}
+          onStarClick={onStarClick}
+        />
+      </Form.Group>
+    );
+};
 
 export default ReviewStarRating
